@@ -1,0 +1,1 @@
+"""CRM desktop application package."""

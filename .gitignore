@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# Secrets & machine-specific configuration  (NEVER commit these)
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+config/*.json
+*.pem
+*.key
+*.pfx
+connection.json
+crm-connection*.json
+
+# ---------------------------------------------------------------------------
+# Real / customer data  (this is a demo-free open-source repo)
+# ---------------------------------------------------------------------------
+Backups/
+backups/
+*.accdb
+app/database/migrations/.tmp_access_export/
+installer/assets/data/
+*.bak
+
+# Runtime settings written by the app
+backup_settings.json
+daily_followup_report_settings.json
+*_report_settings.json
+daily_followup_smart_report_exports/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments (including the one the installer creates on the target)
+.venv/
+venv/
+env/
+ENV/
+installer/.buildvenv/
+
+# ---------------------------------------------------------------------------
+# Build / installer artifacts  (the installer source IS committed; outputs are not)
+# ---------------------------------------------------------------------------
+dist/
+build/
+installer/Output/
+installer/build/
+installer/dist/
+installer/prereq/
+*.spec
+
+# ---------------------------------------------------------------------------
+# Logs, screenshots, generated documents
+# ---------------------------------------------------------------------------
+*.log
+app/logs/*
+!app/logs/.gitkeep
+*.pdf
+
+# ---------------------------------------------------------------------------
+# Editor / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store

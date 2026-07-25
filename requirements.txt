@@ -1,0 +1,25 @@
+# KSA e-Invoice — runtime dependencies (pinned)
+# Generated from the working Python 3.11 environment.
+# Install with:  pip install -r requirements.txt
+#
+# Requires Python 3.11.x (PySide6 6.11 wheels are published for 3.9–3.13;
+# this project is developed and tested on CPython 3.11).
+
+PySide6==6.11.0
+QtAwesome==1.4.2
+
+SQLAlchemy==2.0.49
+psycopg[binary]==3.3.4
+
+python-dotenv==1.2.2
+pydantic==2.13.4
+cryptography==49.0.0
+
+openpyxl==3.1.5
+reportlab==4.5.0
+qrcode==8.2
+Pillow==12.2.0
+num2words==0.5.14
+
+arabic-reshaper==3.0.1
+python-bidi==0.6.7
