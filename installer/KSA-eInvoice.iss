@@ -21,7 +21,7 @@
 ; ============================================================================
 
 #define AppName "KSA e-Invoice"
-#define AppVersion "1.0.0"
+#define AppVersion "1.0.1"
 #define AppPublisher "abohassan1789"
 #define AppURL "https://github.com/abohassan1789-svg/ksa-einvoice"
 #define AppExeIcon "installer\assets\app.ico"
@@ -33,7 +33,11 @@ AppVersion={#AppVersion}
 AppPublisher={#AppPublisher}
 AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
-DefaultDirName={autopf}\KSA-eInvoice
+; Installs OUTSIDE Program Files (system drive root, e.g. C:\KSA-eInvoice) so the
+; source .py files stay freely editable after install (no UAC / VirtualStore),
+; and edits to the UI take effect on the next launch. The {app} dir is also
+; granted users-modify below.
+DefaultDirName={sd}\KSA-eInvoice
 DefaultGroupName={#AppName}
 DisableProgramGroupPage=yes
 DisableDirPage=no

@@ -88,6 +88,28 @@ Silent/unattended install (used for CI/validation):
 KSA-eInvoice-Setup.exe /VERYSILENT /SUPPRESSMSGBOXES /DBHOST=localhost /DBPORT=5432 /DBNAME=ksa_einvoice /DBUSER=postgres /DBPASS=yourpassword
 ```
 
+The application is installed to a freely writable folder (by default
+`C:\KSA-eInvoice`) — **not** Program Files — so its source stays editable.
+
+---
+
+## Editing the UI after installation
+
+The installed app runs its own source from the install folder
+(`C:\KSA-eInvoice\app\...`) via `run_app.vbs` → `.venv\Scripts\pythonw.exe -m app.main`.
+To change the UI on an installed machine:
+
+1. Edit the `.py` files **inside the install folder**, e.g. `C:\KSA-eInvoice\app\ui\...`.
+   (Editing a copy elsewhere has no effect on the installed app.)
+2. Fully **close** the app (make sure no `pythonw.exe` is still running).
+3. Relaunch from the shortcut — Python recompiles the changed files automatically.
+   If a change still doesn't show, delete the `__pycache__` folders under
+   `C:\KSA-eInvoice\app` and relaunch.
+
+> Do not install into `C:\Program Files\...`: Windows redirects unelevated edits
+> there to a hidden `VirtualStore`, so the running app keeps reading the original
+> unedited files. The default install location avoids this.
+
 ---
 
 ## Manual / developer setup
